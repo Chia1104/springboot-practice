@@ -53,7 +53,7 @@ const Input: FC<Props> = forwardRef((props: Props, ref) => {
       </label>
       <input
         ref={ref}
-        id={`${id}-email-input`}
+        id={`${id}-input`}
         placeholder={placeholder}
         onChange={onChange}
         required

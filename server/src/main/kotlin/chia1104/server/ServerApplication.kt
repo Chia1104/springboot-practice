@@ -6,6 +6,6 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class ServerApplication
 
-fun main(args: Array<String>) {
+fun main(args: Array<String>): Unit {
 	runApplication<ServerApplication>(*args)
 }
