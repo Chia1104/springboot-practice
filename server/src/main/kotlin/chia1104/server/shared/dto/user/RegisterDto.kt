@@ -1,4 +1,9 @@
 package chia1104.server.shared.dto.user
 
-class RegisterDto {
-}
+import chia1104.server.shared.enums.Role
+
+class RegisterDto (
+    var name: String,
+    var password: String,
+    var role: Role
+)
