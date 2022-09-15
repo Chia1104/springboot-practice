@@ -40,10 +40,10 @@ open class RestSecurityConfig {
         http
             .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .csrf { it.disable() }
-            .authorizeRequests { it
-                .anyRequest()
-                .authenticated()
-            }
+//            .authorizeRequests { it
+//                .anyRequest()
+//                .authenticated()
+//            }
             .httpBasic(Customizer.withDefaults())
             .oauth2ResourceServer {
                 it.jwt { }
