@@ -1,7 +1,9 @@
 package chia1104.server.utils
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.stereotype.Component
 
+@Component
 open class HashUtils {
     fun hashPassword(password: String): String {
         val encoder = BCryptPasswordEncoder()

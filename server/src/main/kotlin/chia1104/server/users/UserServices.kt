@@ -11,15 +11,16 @@ import org.springframework.web.server.ResponseStatusException
 @Service
 class UserServices(
     private val repository: UserRepositories,
+    private val hashUtils: HashUtils
 ) {
     fun createUser(user: RegisterDto): User {
         if (repository.findByName(user.name) != null) {
             throw ResponseStatusException(BAD_REQUEST, "User already exists")
         }
-        val hashUtils = HashUtils()
         val hashed = hashUtils.hashPassword(user.password)
         return repository.save(User(
             name = user.name,
+            email = user.email,
             password = hashed,
             role = user.role
         ))

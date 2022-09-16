@@ -10,13 +10,11 @@ import java.util.*
 @Entity
 @Table(name = "users")
 class User (
-    @Id
-    @GeneratedValue(generator = "uuidGenerator")
-    @GenericGenerator(name = "uuidGenerator", strategy = "uuid")
-    val id: UUID = UUID.randomUUID(),
-
     @Column(unique = true, nullable = false)
     var name: String,
+
+    @Column(unique = true, nullable = false)
+    var email: String,
 
     @Column(nullable = false)
     @JsonIgnore
@@ -25,7 +23,12 @@ class User (
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     var role: Role,
+) {
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    val id: UUID? = null
 
     @Column(nullable = false)
-    var created_at: LocalDateTime = LocalDateTime.now(),
-)
+    var created_at: LocalDateTime = LocalDateTime.now()
+}

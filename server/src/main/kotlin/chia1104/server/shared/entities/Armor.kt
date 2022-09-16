@@ -1,5 +1,6 @@
 package chia1104.server.shared.entities
 
+import org.hibernate.Hibernate
 import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
@@ -7,15 +8,10 @@ import javax.persistence.*
 @Entity
 @Table(name = "armors")
 class Armor (
-    @Id
-    @GeneratedValue(generator = "uuidGenerator")
-    @GenericGenerator(name = "uuidGenerator", strategy = "uuid")
-    val id: UUID,
-
     @Column(nullable = false)
     var name: String,
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     var description: String,
 
     @Column(nullable = false)
@@ -29,4 +25,9 @@ class Armor (
 
     @Column(nullable = false)
     var heaviness: Int,
-)
+) {
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    val id: UUID? = null
+}
