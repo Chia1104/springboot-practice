@@ -7,15 +7,15 @@ import javax.persistence.*
 
 class UserArmor (
     @Id
-    @GeneratedValue(generator = "uuidGenerator")
-    @GenericGenerator(name = "uuidGenerator", strategy = "uuid")
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     val id: UUID,
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "user_id")
     val user: User,
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "armor_id")
     val armor: Armor,
 )

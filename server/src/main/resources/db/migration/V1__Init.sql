@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS armors (
 CREATE TABLE IF NOT EXISTS users (
   id uuid NOT NULL DEFAULT uuid_generate_v4(),
   name varchar(255) NOT NULL,
-  email varchar(255) NOT NULL,
+  email varchar(255) NOT NULL UNIQUE,
   password varchar(255) NOT NULL,
   created_at timestamp NOT NULL DEFAULT now(),
   role varchar(255) NOT NULL,

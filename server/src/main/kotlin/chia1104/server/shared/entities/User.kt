@@ -1,6 +1,7 @@
 package chia1104.server.shared.entities
 
 import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonFilter;
 import org.hibernate.annotations.GenericGenerator
 import javax.persistence.*
 import chia1104.server.shared.enums.Role
@@ -10,7 +11,7 @@ import java.util.*
 @Entity
 @Table(name = "users")
 class User (
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     var name: String,
 
     @Column(unique = true, nullable = false)
@@ -23,6 +24,9 @@ class User (
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     var role: Role,
+
+    @OneToOne
+    var armor: UserArmor? = null,
 ) {
     @Id
     @GeneratedValue(generator = "uuid")
