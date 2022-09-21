@@ -5,17 +5,19 @@ import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
 
+@Entity
+@Table(name = "user_armor")
 class UserArmor (
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    val id: UUID,
+    val id: UUID = UUID.randomUUID(),
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     val user: User,
 
-    @OneToOne
-    @JoinColumn(name = "armor_id")
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "armor_id", referencedColumnName = "id")
     val armor: Armor,
 )

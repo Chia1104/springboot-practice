@@ -4,6 +4,7 @@ import chia1104.server.shared.dto.user.LoginDto
 import org.springframework.web.server.ResponseStatusException
 import chia1104.server.shared.entities.User
 import chia1104.server.shared.dto.user.RegisterDto
+import org.springframework.data.jpa.repository.Query
 import javax.validation.Valid
 import org.springframework.http.HttpStatus.*
 import org.springframework.web.bind.annotation.*
@@ -25,6 +26,22 @@ class UserControllers(private val service: UserServices) {
     fun getAllUsers(): List<User> {
         try {
             return service.getAllUsers()
+        } catch (e: Exception) {
+            throw ResponseStatusException(NOT_FOUND, e.message)
+        }
+    }
+
+    @PutMapping("/update-armor")
+    fun updateArmor(
+        @Valid
+        @RequestParam
+        armorId: UUID,
+        @RequestHeader("Authorization")
+        token: String
+    ): User {
+        try {
+            val formatToken = token.substring(7)
+            return service.updateUserArmor(formatToken, armorId)
         } catch (e: Exception) {
             throw ResponseStatusException(NOT_FOUND, e.message)
         }
