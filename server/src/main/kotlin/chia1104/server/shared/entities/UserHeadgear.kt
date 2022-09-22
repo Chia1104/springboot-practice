@@ -1,13 +1,12 @@
 package chia1104.server.shared.entities
 
-import org.hibernate.annotations.Type
 import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "user_armor")
-class UserArmor (
+@Table(name = "user_headgear")
+class UserHeadgear (
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")

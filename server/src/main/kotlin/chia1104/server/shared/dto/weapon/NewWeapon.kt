@@ -1,11 +1,13 @@
-package chia1104.server.shared.dto.armor
+package chia1104.server.shared.dto.weapon
 
+import chia1104.server.validation.annotation.WeaponCategory as WeaponCategoryAnnotation
+import chia1104.server.shared.enums.WeaponCategory
 import javax.validation.constraints.Max
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
-class NewArmor (
+class NewWeapon (
     @field:NotNull
     @field:Size(min = 1, max = 20)
     var name: String,
@@ -24,6 +26,11 @@ class NewArmor (
 
     @field:NotNull
     @field:Min(0)
+    @field:Max(100)
+    var attack: Int,
+
+    @field:NotNull
+    @field:Min(0)
     @field:Max(5)
     var level: Int,
 
@@ -31,4 +38,7 @@ class NewArmor (
     @field:Min(0)
     @field:Max(100)
     var heaviness: Int,
+
+    @field:WeaponCategoryAnnotation
+    var category: WeaponCategory
 )

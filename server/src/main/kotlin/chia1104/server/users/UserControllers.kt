@@ -1,10 +1,7 @@
 package chia1104.server.users
 
-import chia1104.server.shared.dto.user.LoginDto
 import org.springframework.web.server.ResponseStatusException
 import chia1104.server.shared.entities.User
-import chia1104.server.shared.dto.user.RegisterDto
-import org.springframework.data.jpa.repository.Query
 import javax.validation.Valid
 import org.springframework.http.HttpStatus.*
 import org.springframework.web.bind.annotation.*
@@ -42,6 +39,106 @@ class UserControllers(private val service: UserServices) {
         try {
             val formatToken = token.substring(7)
             return service.updateUserArmor(formatToken, armorId)
+        } catch (e: Exception) {
+            throw ResponseStatusException(NOT_FOUND, e.message)
+        }
+    }
+
+    @DeleteMapping("/remove-armor")
+    fun deleteArmor(
+        @RequestHeader("Authorization")
+        token: String
+    ): User {
+        try {
+            val formatToken = token.substring(7)
+            return service.removeUserArmor(formatToken)
+        } catch (e: Exception) {
+            throw ResponseStatusException(NOT_FOUND, e.message)
+        }
+    }
+
+    @PutMapping("/update-weapon")
+    fun updateWeapon(
+        @Valid
+        @RequestParam
+        weaponId: UUID,
+        @RequestHeader("Authorization")
+        token: String
+    ): User {
+        try {
+            val formatToken = token.substring(7)
+            return service.updateUserWeapon(formatToken, weaponId)
+        } catch (e: Exception) {
+            throw ResponseStatusException(NOT_FOUND, e.message)
+        }
+    }
+
+    @DeleteMapping("/remove-weapon")
+    fun deleteWeapon(
+        @RequestHeader("Authorization")
+        token: String
+    ): User {
+        try {
+            val formatToken = token.substring(7)
+            return service.removeUserWeapon(formatToken)
+        } catch (e: Exception) {
+            throw ResponseStatusException(NOT_FOUND, e.message)
+        }
+    }
+
+    @PutMapping("/update-headgear")
+    fun updateHeadgear(
+        @Valid
+        @RequestParam
+        headgearId: UUID,
+        @RequestHeader("Authorization")
+        token: String
+    ): User {
+        try {
+            val formatToken = token.substring(7)
+            return service.updateUserHeadgear(formatToken, headgearId)
+        } catch (e: Exception) {
+            throw ResponseStatusException(NOT_FOUND, e.message)
+        }
+    }
+
+    @DeleteMapping("/remove-headgear")
+    fun deleteHeadgear(
+        @RequestHeader("Authorization")
+        token: String
+    ): User {
+        try {
+            val formatToken = token.substring(7)
+            return service.removeUserHeadgear(formatToken)
+        } catch (e: Exception) {
+            throw ResponseStatusException(NOT_FOUND, e.message)
+        }
+    }
+
+    @PutMapping("/update-shield")
+    fun updateShield(
+        @Valid
+        @RequestParam
+        shieldId: UUID,
+        @RequestHeader("Authorization")
+        token: String
+    ): User {
+        try {
+            val formatToken = token.substring(7)
+            return service.updateUserShield(formatToken, shieldId)
+        } catch (e: Exception) {
+            throw ResponseStatusException(NOT_FOUND, e.message)
+        }
+    }
+
+    @DeleteMapping("/remove-shield")
+    fun deleteShield(
+        @RequestHeader("Authorization")
+        token: String
+    ): User {
+        try {
+            val formatToken = token.substring(7)
+            return service.removeUserShield(formatToken)
         } catch (e: Exception) {
             throw ResponseStatusException(NOT_FOUND, e.message)
         }

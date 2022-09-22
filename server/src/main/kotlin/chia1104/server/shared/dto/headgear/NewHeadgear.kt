@@ -1,11 +1,11 @@
-package chia1104.server.shared.dto.armor
+package chia1104.server.shared.dto.headgear
 
 import javax.validation.constraints.Max
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
-class NewArmor (
+class NewHeadgear (
     @field:NotNull
     @field:Size(min = 1, max = 20)
     var name: String,

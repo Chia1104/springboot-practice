@@ -1,21 +1,12 @@
 package chia1104.server.shared.entities
 
-import org.hibernate.annotations.Type
 import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "user_armor")
-class UserArmor (
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    val id: UUID = UUID.randomUUID(),
-
-    @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
-    val user: List<User> = emptyList(),
-
+@Table(name = "shields")
+class Shield (
     @Column(nullable = false)
     var name: String,
 
@@ -29,8 +20,16 @@ class UserArmor (
     var defense: Int,
 
     @Column(nullable = false)
+    var attack: Int,
+
+    @Column(nullable = false)
     var level: Int,
 
     @Column(nullable = false)
     var heaviness: Int,
-)
+) {
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    val id: UUID? = null
+}

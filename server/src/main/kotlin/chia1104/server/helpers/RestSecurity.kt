@@ -1,4 +1,4 @@
-package chia1104.server.config
+package chia1104.server.helpers
 
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
@@ -28,7 +28,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-open class RestSecurityConfig {
+open class RestSecurity {
     @Value("\${jwt.public.key}")
     val publicKey: RSAPublicKey? = null
 

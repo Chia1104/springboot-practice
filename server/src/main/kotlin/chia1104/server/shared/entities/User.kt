@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import org.hibernate.annotations.GenericGenerator
 import javax.persistence.*
 import chia1104.server.shared.enums.Role
-import chia1104.server.shared.entities.Armor
 import java.time.LocalDateTime
 import java.util.*
 
@@ -25,8 +24,21 @@ class User (
     @Column(nullable = false)
     var role: Role,
 
-    @OneToOne(mappedBy = "user", cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "armor_id", referencedColumnName = "id")
     var armor: UserArmor? = null,
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "headgear_id", referencedColumnName = "id")
+    var headgear: UserHeadgear? = null,
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "shield_id", referencedColumnName = "id")
+    var shield: UserShield? = null,
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "weapon_id", referencedColumnName = "id")
+    var weapon: UserWeapon? = null,
 ) {
     @Id
     @GeneratedValue(generator = "uuid")

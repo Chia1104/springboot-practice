@@ -1,11 +1,11 @@
-package chia1104.server.shared.dto.armor
+package chia1104.server.shared.dto.shield
 
 import javax.validation.constraints.Max
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
-class NewArmor (
+class NewShield (
     @field:NotNull
     @field:Size(min = 1, max = 20)
     var name: String,
@@ -21,6 +21,11 @@ class NewArmor (
     @field:Min(0)
     @field:Max(100)
     var defense: Int,
+
+    @field:NotNull
+    @field:Min(0)
+    @field:Max(100)
+    var attack: Int,
 
     @field:NotNull
     @field:Min(0)

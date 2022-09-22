@@ -1,13 +1,13 @@
 package chia1104.server.shared.entities
 
-import org.hibernate.annotations.Type
+import chia1104.server.shared.enums.WeaponCategory
 import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "user_armor")
-class UserArmor (
+@Table(name = "user_weapon")
+class UserWeapon (
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
@@ -29,7 +29,14 @@ class UserArmor (
     var defense: Int,
 
     @Column(nullable = false)
+    var attack: Int,
+
+    @Column(nullable = false)
     var level: Int,
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    var category: WeaponCategory,
 
     @Column(nullable = false)
     var heaviness: Int,

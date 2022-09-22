@@ -1,11 +1,12 @@
 package chia1104.server.users
 
 import chia1104.server.armors.ArmorRepositories
+import chia1104.server.headgears.HeadgearRepositories
+import chia1104.server.weapons.WeaponRepositories
+import chia1104.server.shields.ShieldRepositories
 import chia1104.server.shared.dto.user.LoginDto
-import chia1104.server.shared.entities.User
-import chia1104.server.shared.entities.UserArmor
+import chia1104.server.shared.entities.*
 import chia1104.server.shared.dto.user.RegisterDto
-import chia1104.server.user_armor.UserArmorRepository
 import org.springframework.stereotype.Service
 import chia1104.server.utils.HashUtils
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
@@ -18,8 +19,14 @@ import java.util.*
 @Service
 class UserServices(
     private val repository: UserRepositories,
-    private val armorRepositories: ArmorRepositories,
-    private val userArmorRepository: UserArmorRepository,
+    private val armorRepository: ArmorRepositories,
+    private val headgearRepository: HeadgearRepositories,
+    private val weaponRepository: WeaponRepositories,
+    private val shieldRepository: ShieldRepositories,
+    private val userArmorRepository: UserArmorRepositories,
+    private val userHeadgearRepository: UserHeadgearRepositories,
+    private val userShieldRepository: UserShieldRepositories,
+    private val userWeaponRepository: UserWeaponRepositories,
     private val hashUtils: HashUtils,
     private val jwtEncoder: JwtEncoder,
     private val jwtDecoder: JwtDecoder
@@ -70,11 +77,88 @@ class UserServices(
 
     fun updateUserArmor(token: String, armorId: UUID): User {
         val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
-        val armor = armorRepositories.findById(armorId).orElseThrow { IllegalArgumentException("Armor not found") }
-        val updated = userArmorRepository.save(UserArmor(
-            user = user,
-            armor = armor
+        val armor = armorRepository.findById(armorId).orElseThrow { IllegalArgumentException("Armor not found") }
+        val updateArmor = userArmorRepository.save(UserArmor(
+            name = armor.name,
+            description = armor.description,
+            image = armor.image,
+            defense = armor.defense,
+            level = armor.level,
+            heaviness = armor.heaviness,
         ))
-        return repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
+        user.armor = updateArmor
+        return repository.save(user)
+    }
+
+    fun removeUserArmor(token: String): User {
+        val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
+        user.armor = null
+        return repository.save(user)
+    }
+
+    fun updateUserHeadgear(token: String, headgearId: UUID): User {
+        val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
+        val headgear = headgearRepository.findById(headgearId).orElseThrow { IllegalArgumentException("Headgear not found") }
+        val updateHeadgear = userHeadgearRepository.save(UserHeadgear(
+            name = headgear.name,
+            description = headgear.description,
+            image = headgear.image,
+            defense = headgear.defense,
+            level = headgear.level,
+            heaviness = headgear.heaviness,
+        ))
+        user.headgear = updateHeadgear
+        return repository.save(user)
+    }
+
+    fun removeUserHeadgear(token: String): User {
+        val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
+        user.headgear = null
+        return repository.save(user)
+    }
+
+    fun updateUserWeapon(token: String, weaponId: UUID): User {
+        val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
+        val weapon = weaponRepository.findById(weaponId).orElseThrow { IllegalArgumentException("Weapon not found") }
+        val updateWeapon = userWeaponRepository.save(UserWeapon(
+            name = weapon.name,
+            description = weapon.description,
+            image = weapon.image,
+            defense = weapon.defense,
+            attack = weapon.attack,
+            level = weapon.level,
+            heaviness = weapon.heaviness,
+            category = weapon.category,
+        ))
+        user.weapon = updateWeapon
+        return repository.save(user)
+    }
+
+    fun removeUserWeapon(token: String): User {
+        val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
+        user.weapon = null
+        return repository.save(user)
+    }
+
+    fun updateUserShield(token: String, shieldId: UUID): User {
+        val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
+        val shield = shieldRepository.findById(shieldId).orElseThrow { IllegalArgumentException("Shield not found") }
+        val updateShield = userShieldRepository.save(UserShield(
+            name = shield.name,
+            description = shield.description,
+            image = shield.image,
+            defense = shield.defense,
+            attack = shield.attack,
+            level = shield.level,
+            heaviness = shield.heaviness,
+        ))
+        user.shield = updateShield
+        return repository.save(user)
+    }
+
+    fun removeUserShield(token: String): User {
+        val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
+        user.shield = null
+        return repository.save(user)
     }
 }
