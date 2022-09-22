@@ -25,14 +25,14 @@ const EditWeaponList: FC<Props> = (props) => {
         <ButtonPrimary
           onClick={() => {
             // @ts-ignore
-            dispatch(deleteUserWeaponAsync({ token: userData.accessToken }));
+            dispatch(deleteUserWeaponAsync({ token: userData.token }));
             dispatch(activeEditWeaponModal());
           }}>
           Remove
         </ButtonPrimary>
       </div>
       {weapons.map((weapon) => (
-        <div key={weapon.weaponId} className="flex flex-col w-full">
+        <div key={weapon.id} className="flex flex-col w-full">
           <h2 className="c-subtitle m-2 c-text-bg-primary-half self-center">
             {weapon.name}
           </h2>
@@ -43,8 +43,8 @@ const EditWeaponList: FC<Props> = (props) => {
                 dispatch(
                   postUserWeaponAsync({
                     // @ts-ignore
-                    token: userData.accessToken,
-                    weaponId: weapon.weaponId,
+                    token: userData.token,
+                    weaponId: weapon.id,
                   })
                 );
                 dispatch(activeEditWeaponModal());

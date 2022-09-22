@@ -1,4 +1,5 @@
 ﻿import { type UUID } from "@chia/shared/types";
+import { getBaseUrl } from "@chia/util/getBaseUrl";
 
 export const getAllUsers = async (
   token: string
@@ -6,23 +7,19 @@ export const getAllUsers = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch("/api/user/getalluser", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/user/all`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const getUser = async (
@@ -32,23 +29,19 @@ export const getUser = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(`/api/user/getuserbyid?id=${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/user/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const postUserArmor = async (
@@ -58,23 +51,22 @@ export const postUserArmor = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(`/api/user/UpdateUserArmor?armorId=${armorId}`, {
+  const res = await fetch(
+    `${getBaseUrl()}/api/user/update-armor?armorId=${armorId}`,
+    {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-    });
-    const data: any = await res.json();
+    }
+  );
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const deleteUserArmor = async (
@@ -83,23 +75,19 @@ export const deleteUserArmor = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(`/api/user/DeleteUserArmor`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/user/remove-armor`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const postUserHeadgear = async (
@@ -109,26 +97,22 @@ export const postUserHeadgear = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(
-      `/api/user/UpdateUserHeadgear?headgearId=${headgearId}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    const data: any = await res.json();
+  const res = await fetch(
+    `${getBaseUrl()}/api/user/update-headgear?headgearId=${headgearId}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const deleteUserHeadgear = async (
@@ -137,23 +121,19 @@ export const deleteUserHeadgear = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(`/api/user/DeleteUserHeadgear`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/user/remove-headgear`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const postUserWeapon = async (
@@ -163,23 +143,22 @@ export const postUserWeapon = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(`/api/user/UpdateUserWeapon?weaponId=${weaponId}`, {
+  const res = await fetch(
+    `${getBaseUrl()}/api/user/update-weapon?weaponId=${weaponId}`,
+    {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-    });
-    const data: any = await res.json();
+    }
+  );
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const deleteUserWeapon = async (
@@ -188,23 +167,19 @@ export const deleteUserWeapon = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(`/api/user/DeleteUserWeapon`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/user/remove-weapon`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const postUserShield = async (
@@ -214,23 +189,22 @@ export const postUserShield = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(`/api/user/UpdateUserShield?shieldId=${shieldId}`, {
+  const res = await fetch(
+    `${getBaseUrl()}/api/user/update-shield?shieldId=${shieldId}`,
+    {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-    });
-    const data: any = await res.json();
+    }
+  );
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const deleteUserShield = async (
@@ -239,21 +213,17 @@ export const deleteUserShield = async (
   data: any;
   status: number;
 }> => {
-  try {
-    const res = await fetch(`/api/user/DeleteUserShield`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/user/remove-shield`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e: any) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };

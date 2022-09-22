@@ -1,8 +1,11 @@
-﻿import { Email, UUID } from "@chia/shared/types";
+﻿import { Email, UUID, Role } from "@chia/shared/types";
 
 export type Auth = {
-  userId?: UUID;
-  email?: Email;
-  name?: string;
-  accessToken?: string;
+  user: {
+    id?: UUID;
+    email?: Email;
+    name?: string;
+    role?: Role;
+  };
+  token?: string;
 };

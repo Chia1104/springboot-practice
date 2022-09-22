@@ -114,7 +114,7 @@ const RegisterPage: FC = () => {
       });
       navigate("/");
       // @ts-ignore
-      setUserData(authData.auth.data);
+      setUserData(authData.auth);
     }
     if (registerState.loading === "failed")
       setToast({

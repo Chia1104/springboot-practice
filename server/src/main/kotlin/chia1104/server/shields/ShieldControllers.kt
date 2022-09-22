@@ -10,6 +10,7 @@ import chia1104.server.shared.dto.shield.NewShield
 
 @RestController
 @RequestMapping("/api/shield")
+@CrossOrigin
 class ShieldControllers(private val service: ShieldServices) {
     @GetMapping("/all")
     fun getAllShields(): List<Shield> = service.getAllShields()

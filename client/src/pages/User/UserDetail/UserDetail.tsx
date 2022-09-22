@@ -28,7 +28,7 @@ const UserDetailPage: FC = () => {
 
   useEffect(() => {
     // @ts-ignore
-    dispatch(getUserAsync({ token: userData.accessToken, id: userId }));
+    dispatch(getUserAsync({ token: userData.token, id: userId }));
 
     return () => {
       dispatch(clearUserDetails());

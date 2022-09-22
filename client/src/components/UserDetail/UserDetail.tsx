@@ -104,8 +104,7 @@ const UserDetail: FC<Props> = (props) => {
             <Headgear headgear={user.headgear} />
           </div>
         ) : (
-          // @ts-ignore
-          userData.userId === userId && (
+          userData?.user.id === userId && (
             <div className="flex flex-col w-[200px] mx-auto p-5">
               <h2 className="c-subtitle m-2 c-text-bg-primary-half self-center">
                 Headgear
@@ -125,8 +124,7 @@ const UserDetail: FC<Props> = (props) => {
             <Shield shield={user.shield} />
           </div>
         ) : (
-          // @ts-ignore
-          userData.userId === userId && (
+          userData?.user.id === userId && (
             <div className="flex flex-col w-[200px] mx-auto p-5">
               <h2 className="c-subtitle m-2 c-text-bg-primary-half self-center">
                 Shield
@@ -145,8 +143,7 @@ const UserDetail: FC<Props> = (props) => {
             <Weapon weapon={user.weapon} />
           </div>
         ) : (
-          // @ts-ignore
-          userData.userId === userId && (
+          userData?.user.id === userId && (
             <div className="flex flex-col w-[200px] mx-auto p-5">
               <h2 className="c-subtitle m-2 c-text-bg-primary-half self-center">
                 Weapon

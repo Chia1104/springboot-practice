@@ -11,7 +11,7 @@ const ArmorList: FC<Props> = (props) => {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
       {armors.map((armor) => (
-        <div key={armor.armorId} className="flex flex-col w-full">
+        <div key={armor.id} className="flex flex-col w-full">
           <h2 className="c-subtitle m-2 c-text-bg-primary-half self-center">
             {armor.name}
           </h2>

@@ -73,9 +73,10 @@ const LoginPage: FC = () => {
         text: "Login succeeded",
         type: "success",
       });
+      console.log(authData);
       navigate("/");
       // @ts-ignore
-      setUserData(authData.auth.data);
+      setUserData(authData.auth);
     }
     if (loginState.loading === "failed")
       setToast({

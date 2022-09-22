@@ -1,7 +1,7 @@
 ﻿import { UUID } from "@chia/shared/types";
 
 export type Weapon = {
-  weaponId: UUID;
+  id: UUID;
   name: string;
   description: string;
   image: string;

@@ -25,14 +25,14 @@ const EditArmorList: FC<Props> = (props) => {
         <ButtonPrimary
           onClick={() => {
             // @ts-ignore
-            dispatch(deleteUserArmorAsync({ token: userData.accessToken }));
+            dispatch(deleteUserArmorAsync({ token: userData.token }));
             dispatch(activeEditArmorModal());
           }}>
           Remove
         </ButtonPrimary>
       </div>
       {armors.map((armor) => (
-        <div key={armor.armorId} className="flex flex-col w-full">
+        <div key={armor.id} className="flex flex-col w-full">
           <h2 className="c-subtitle m-2 c-text-bg-primary-half self-center">
             {armor.name}
           </h2>
@@ -43,8 +43,8 @@ const EditArmorList: FC<Props> = (props) => {
                 dispatch(
                   postUserArmorAsync({
                     // @ts-ignore
-                    token: userData.accessToken,
-                    armorId: armor.armorId,
+                    token: userData.token,
+                    armorId: armor.id,
                   })
                 );
                 dispatch(activeEditArmorModal());

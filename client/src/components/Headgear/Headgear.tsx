@@ -78,20 +78,14 @@ const HeadgearInfo: FC<IHeadgearInfo> = (props) => {
       <Capacity value={heaviness} color={heavinessColor} width="100%" />
       {haveMoreButton && (
         <>
-          {/* <div className="mt-5"> */}
-          {/*  <ButtonPrimary>MORE</ButtonPrimary> */}
-          {/* </div> */}
-          {
-            // @ts-ignore
-            userData.userId === userId && (
-              <div className="mt-5">
-                <ButtonPrimary
-                  onClick={() => dispatch(activeEditHeadgearModal())}>
-                  EDIT
-                </ButtonPrimary>
-              </div>
-            )
-          }
+          {userData?.user.id === userId && (
+            <div className="mt-5">
+              <ButtonPrimary
+                onClick={() => dispatch(activeEditHeadgearModal())}>
+                EDIT
+              </ButtonPrimary>
+            </div>
+          )}
         </>
       )}
     </motion.div>

@@ -1,153 +1,122 @@
 ﻿import { type UUID } from "@chia/shared/types";
+import { getBaseUrl } from "@chia/util/getBaseUrl";
 
 export const getAllArmors = async () => {
-  try {
-    const res = await fetch("/api/armor/getallarmor", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/armor/all`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const getArmor = async (id: UUID) => {
-  try {
-    const res = await fetch(`/api/armor/getarmorbyid?id=${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/armor/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const getAllHeadgear = async () => {
-  try {
-    const res = await fetch("/api/headgear/getallheadgear", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/headgear/all`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const getHeadgear = async (id: UUID) => {
-  try {
-    const res = await fetch(`/api/headgear/getheadgearbyid?id=${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/headgear/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const getAllWeapons = async () => {
-  try {
-    const res = await fetch("/api/weapon/getallweapon", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/weapon/all`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const getWeapon = async (id: UUID) => {
-  try {
-    const res = await fetch(`/api/weapon/getweaponbyid?id=${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/weapon/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const getAllShields = async () => {
-  try {
-    const res = await fetch("/api/shield/getallshield", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/shield/all`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };
 
 export const getShield = async (id: UUID) => {
-  try {
-    const res = await fetch(`/api/shield/getshieldbyid?id=${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data: any = await res.json();
+  const res = await fetch(`${getBaseUrl()}/api/shield/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data: any = await res.json();
 
-    return {
-      data,
-      status: res.status,
-    };
-  } catch (e) {
-    throw e;
-  }
+  return {
+    data,
+    status: res.status,
+  };
 };

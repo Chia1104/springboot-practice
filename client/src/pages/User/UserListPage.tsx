@@ -12,8 +12,7 @@ const UserListPage: FC = () => {
   const users = useAppSelector(selectAllUsers);
   const userData = useReadLocalStorage<LocalUser>("userData");
   useEffect(() => {
-    if (!users.data.data)
-      dispatch(getAllUsersAsync(userData?.accessToken || ""));
+    if (!users.data.data) dispatch(getAllUsersAsync(userData?.token || ""));
   }, []);
   return (
     <div className="c-main c-container">

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin
 class AuthControllers(private val service: UserServices) {
     @PostMapping("/register")
     fun register(

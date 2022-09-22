@@ -10,6 +10,7 @@ import javax.validation.Valid
 
 @RestController
 @RequestMapping("/api/armor")
+@CrossOrigin
 class ArmorControllers(private val service: ArmorServices) {
     @GetMapping("/all")
     fun getAllArmors(): List<Armor> = service.getAllArmors()

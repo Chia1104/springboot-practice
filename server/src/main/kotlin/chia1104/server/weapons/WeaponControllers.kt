@@ -10,6 +10,7 @@ import chia1104.server.shared.dto.weapon.NewWeapon
 
 @RestController
 @RequestMapping("/api/weapon")
+@CrossOrigin
 class WeaponControllers(private val service: WeaponServices) {
     @GetMapping("/all")
     fun getAllWeapons(): List<Weapon> = service.getAllWeapons()

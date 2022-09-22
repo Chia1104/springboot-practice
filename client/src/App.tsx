@@ -38,14 +38,14 @@ function App() {
         <Avatar
           width="70px"
           height="70px"
-          src={userData ? getRoleImage(userData.role) : Anonymous}
-          text={userData?.name || "Anonymous"}
+          src={userData ? getRoleImage(userData.user.role) : Anonymous}
+          text={userData?.user.name || "Anonymous"}
           onClick={() => dispatch(activeDrawer())}
         />
       </div>
       <Drawer
-        title={userData?.name || "You are not login"}
-        subtitle={userData?.role || ""}
+        title={userData?.user.name || "You are not login"}
+        subtitle={userData?.user.role || ""}
         visible={actionSheet.drawer.isOpen}
         onClose={() => dispatch(activeDrawer())}
         height="370px">
@@ -67,7 +67,7 @@ function App() {
                   height="100px"
                   src={PackageImg}
                   onClick={() => {
-                    navigate(`users/${userData.userId}`);
+                    navigate(`users/${userData.user.id}`);
                     dispatch(activeDrawer());
                   }}
                 />

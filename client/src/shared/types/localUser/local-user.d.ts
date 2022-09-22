@@ -1,9 +1,11 @@
 ﻿import { Email, Role, UUID } from "@chia/shared/types";
 
 export type LocalUser = {
-  userId: UUID;
-  email: Email;
-  name: string;
-  role: Role;
-  accessToken: string;
+  user: {
+    id?: UUID;
+    email?: Email;
+    name?: string;
+    role?: Role;
+  };
+  token?: string;
 };

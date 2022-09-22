@@ -6,15 +6,14 @@
   Shield,
   Weapon,
   Name,
+  Role,
 } from "@chia/shared/types";
 
 export type User = {
-  userId: UUID;
+  id: UUID;
   name: Name;
   email: Email;
-  createdAt: string;
-  role: number;
-  isActive: boolean;
+  role: Role;
   armor: Armor | null;
   headgear: Headgear | null;
   shield: Shield | null;

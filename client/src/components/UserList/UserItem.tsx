@@ -18,14 +18,14 @@ const UserItem: FC<Props> = ({ user }) => {
   const navigate = useNavigate();
   return (
     <Link
-      to={`/users/${user.userId}`}
+      to={`/users/${user.id}`}
       className="w-full h-[100px] p-5 flex items-center hover:bg-primary transition ease-in-out border-b-2 c-border-primary">
       <Avatar
         width="70px"
         height="70px"
         // @ts-ignore
         src={user ? getRoleImage(user.role) : Anonymous}
-        onClick={() => navigate(`/users/${user.userId}`)}
+        onClick={() => navigate(`/users/${user.id}`)}
       />
       <div className="ml-5 flex flex-col">
         <span className="flex items-center">

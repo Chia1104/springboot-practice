@@ -83,20 +83,13 @@ const ShieldInfo: FC<IShieldInfo> = (props) => {
       <Capacity value={attack} color={attackColor} width="100%" />
       {haveMoreButton && (
         <>
-          {/* <div className="mt-5"> */}
-          {/*  <ButtonPrimary>MORE</ButtonPrimary> */}
-          {/* </div> */}
-          {
-            // @ts-ignore
-            userData.userId === userId && (
-              <div className="mt-5">
-                <ButtonPrimary
-                  onClick={() => dispatch(activeEditShieldModal())}>
-                  EDIT
-                </ButtonPrimary>
-              </div>
-            )
-          }
+          {userData?.user.id === userId && (
+            <div className="mt-5">
+              <ButtonPrimary onClick={() => dispatch(activeEditShieldModal())}>
+                EDIT
+              </ButtonPrimary>
+            </div>
+          )}
         </>
       )}
     </motion.div>

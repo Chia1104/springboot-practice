@@ -83,20 +83,13 @@ const WeaponInfo: FC<IWeaponInfo> = (props) => {
       <Capacity value={attack} color={attackColor} width="100%" />
       {haveMoreButton && (
         <>
-          {/* <div className="mt-5"> */}
-          {/*  <ButtonPrimary>MORE</ButtonPrimary> */}
-          {/* </div> */}
-          {
-            // @ts-ignore
-            userData.userId === userId && (
-              <div className="mt-5">
-                <ButtonPrimary
-                  onClick={() => dispatch(activeEditWeaponModal())}>
-                  EDIT
-                </ButtonPrimary>
-              </div>
-            )
-          }
+          {userData?.user.id === userId && (
+            <div className="mt-5">
+              <ButtonPrimary onClick={() => dispatch(activeEditWeaponModal())}>
+                EDIT
+              </ButtonPrimary>
+            </div>
+          )}
         </>
       )}
     </motion.div>

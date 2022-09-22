@@ -9,6 +9,7 @@ import java.util.UUID
 
 @RestController
 @RequestMapping("/api/user")
+@CrossOrigin
 class UserControllers(private val service: UserServices) {
     @GetMapping("/{id}")
     fun getUser(@PathVariable id: UUID): User {

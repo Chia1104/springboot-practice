@@ -1,5 +1,5 @@
 ﻿export type Shield = {
-  shieldId: UUID;
+  id: UUID;
   name: string;
   description: string;
   image: string;

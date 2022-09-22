@@ -10,6 +10,7 @@ import chia1104.server.shared.dto.headgear.NewHeadgear
 
 @RestController
 @RequestMapping("/api/headgear")
+@CrossOrigin
 class HeadgearControllers(private val service: HeadgearServices) {
     @GetMapping("/all")
     fun getAllHeadgears(): List<Headgear> = service.getAllHeadgears()
