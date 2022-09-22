@@ -1,0 +1,106 @@
+[
+  {
+    "name": "麻布裝甲",
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(1).png?alt=media",
+    "defense": 20,
+    "level": 1,
+    "heaviness": 30
+  },
+  {
+    "name": "鐵甲套裝",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(2).png?alt=media",
+    "level": 1,
+    "defense": 30,
+    "heaviness": 35,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "皮革鐵甲",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(3).png?alt=media",
+    "level": 2,
+    "defense": 33,
+    "heaviness": 37,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "極品裝甲",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(4).png?alt=media",
+    "level": 2,
+    "defense": 33,
+    "heaviness": 37,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "騎士裝甲",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(5).png?alt=media",
+    "level": 3,
+    "defense": 40,
+    "heaviness": 37,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "聖騎士鐵甲",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(6).png?alt=media",
+    "level": 3,
+    "defense": 40,
+    "heaviness": 37,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "古代裝甲",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(7).png?alt=media",
+    "level": 1,
+    "defense": 25,
+    "heaviness": 35,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "士兵鐵甲",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(8).png?alt=media",
+    "level": 2,
+    "defense": 35,
+    "heaviness": 40,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "鐵甲套裝",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(9).png?alt=media",
+    "level": 2,
+    "defense": 34,
+    "heaviness": 35,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "武士套裝",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(10).png?alt=media",
+    "level": 3,
+    "defense": 40,
+    "heaviness": 40,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "聖騎士套裝",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(11).png?alt=media",
+    "level": 5,
+    "defense": 60,
+    "heaviness": 40,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "士兵鐵甲",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor%20(12).png?alt=media",
+    "level": 1,
+    "defense": 35,
+    "heaviness": 40,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "聖騎士套裝",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Farmors%2Farmor.png?alt=media",
+    "level": 4,
+    "defense": 45,
+    "heaviness": 40,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  }
+]

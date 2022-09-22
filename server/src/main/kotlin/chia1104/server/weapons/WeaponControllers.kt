@@ -35,4 +35,17 @@ class WeaponControllers(private val service: WeaponServices) {
             throw ResponseStatusException(BAD_REQUEST, "Weapon not added")
         }
     }
+
+    @PostMapping("/add-many")
+    fun addManyWeapons(
+        @Valid
+        @RequestBody
+        newWeapons: List<NewWeapon>
+    ): List<Weapon> {
+        try {
+            return service.addMultipleWeapons(newWeapons)
+        } catch (e: Exception) {
+            throw ResponseStatusException(BAD_REQUEST, "Weapons not added")
+        }
+    }
 }

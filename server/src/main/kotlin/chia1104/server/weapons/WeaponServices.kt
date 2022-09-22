@@ -22,4 +22,17 @@ class WeaponServices(private val repository: WeaponRepositories) {
         heaviness = newWeapon.heaviness,
         category = newWeapon.category,
     ))
+
+    fun addMultipleWeapons(newWeapons: List<NewWeapon>): List<Weapon> = repository.saveAll(newWeapons.map {
+        Weapon(
+            name = it.name,
+            description = it.description,
+            image = it.image,
+            defense = it.defense,
+            attack = it.attack,
+            level = it.level,
+            heaviness = it.heaviness,
+            category = it.category,
+        )
+    })
 }

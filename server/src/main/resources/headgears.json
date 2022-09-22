@@ -1,0 +1,82 @@
+[
+  {
+    "name": "基本頭盔",
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fhelmet%20(1).png?alt=media",
+    "defense": 13,
+    "level": 2,
+    "heaviness": 6
+  },
+  {
+    "name": "騎士頭盔",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fhelmet%20(2).png?alt=media",
+    "level": 3,
+    "defense": 17,
+    "heaviness": 10,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "尼可拉歐頭盔",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fhelmet%20(3).png?alt=media",
+    "level": 4,
+    "defense": 19,
+    "heaviness": 10,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "士兵頭盔",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fhelmet%20(4).png?alt=media",
+    "level": 1,
+    "defense": 9,
+    "heaviness": 8,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "獵犬頭盔",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fhelmet%20(5).png?alt=media",
+    "level": 2,
+    "defense": 16,
+    "heaviness": 8,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "維京戰士頭盔",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fhelmet%20(6).png?alt=media",
+    "level": 2,
+    "defense": 17,
+    "heaviness": 9,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "護衛隊頭盔",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fhelmet.png?alt=media",
+    "level": 2,
+    "defense": 16,
+    "heaviness": 8,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "騎士頭盔",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fknight.png?alt=media",
+    "level": 3,
+    "defense": 17,
+    "heaviness": 9,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "武士頭盔",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fsamurai%20(1).png?alt=media",
+    "level": 4,
+    "defense": 19,
+    "heaviness": 10,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "鬼面",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fheadgears%2Fsamurai.png?alt=media",
+    "level": 4,
+    "defense": 13,
+    "heaviness": 4,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  }
+]

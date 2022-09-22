@@ -41,4 +41,20 @@ class ArmorControllers(private val service: ArmorServices) {
             throw ResponseStatusException(INTERNAL_SERVER_ERROR, e.message)
         }
     }
+
+    @PostMapping("/add-many")
+    fun addManyArmors(
+        @Valid
+        @RequestBody
+        armors: List<NewArmor>
+    ): List<Armor> {
+        try {
+            return service.addMultipleArmors(armors)
+        } catch (e: Exception) {
+            if (e is IllegalArgumentException) {
+                throw ResponseStatusException(BAD_REQUEST, e.message)
+            }
+            throw ResponseStatusException(INTERNAL_SERVER_ERROR, e.message)
+        }
+    }
 }

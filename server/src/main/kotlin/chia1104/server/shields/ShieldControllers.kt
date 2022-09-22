@@ -35,4 +35,17 @@ class ShieldControllers(private val service: ShieldServices) {
             throw ResponseStatusException(BAD_REQUEST, "Shield not added")
         }
     }
+
+    @PostMapping("/add-many")
+    fun addManyShields(
+        @Valid
+        @RequestBody
+        newShields: List<NewShield>
+    ): List<Shield> {
+        try {
+            return service.addMultipleShields(newShields)
+        } catch (e: Exception) {
+            throw ResponseStatusException(BAD_REQUEST, "Shields not added")
+        }
+    }
 }

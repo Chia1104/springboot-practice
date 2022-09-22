@@ -20,4 +20,17 @@ class ArmorServices(private val repository: ArmorRepositories) {
             heaviness = armor.heaviness,
         )
     );
+
+    fun addMultipleArmors(armors: List<NewArmor>): List<Armor> = repository.saveAll(
+        armors.map {
+            Armor(
+                name = it.name,
+                description = it.description,
+                image = it.image,
+                defense = it.defense,
+                level = it.level,
+                heaviness = it.heaviness,
+            )
+        }
+    );
 }

@@ -35,4 +35,17 @@ class HeadgearControllers(private val service: HeadgearServices) {
             throw ResponseStatusException(BAD_REQUEST, "Headgear not added")
         }
     }
+
+    @PostMapping("/add-many")
+    fun addManyHeadgears(
+        @Valid
+        @RequestBody
+        newHeadgears: List<NewHeadgear>
+    ): List<Headgear> {
+        try {
+            return service.addMultipleHeadgears(newHeadgears)
+        } catch (e: Exception) {
+            throw ResponseStatusException(BAD_REQUEST, "Headgears not added")
+        }
+    }
 }

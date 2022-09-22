@@ -1,0 +1,242 @@
+[
+  {
+    "name": "炎魔戰斧",
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fax.png?alt=media",
+    "defense": 17,
+    "attack": 20,
+    "level": 3,
+    "category": "Melee",
+    "heaviness": 18
+  },
+  {
+    "name": "風炎神弓",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fbow-and-arrow.png?alt=media",
+    "defense": 7,
+    "attack": 17,
+    "level": 2,
+    "category": "Ranged",
+    "heaviness": 10,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "聖劍",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fdagger%20(1).png?alt=media",
+    "defense": 10,
+    "attack": 22,
+    "level": 4,
+    "category": "Melee",
+    "heaviness": 16,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "詛咒之刃",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fdagger%20(2).png?alt=media",
+    "defense": 8,
+    "attack": 18,
+    "level": 3,
+    "category": "Melee",
+    "heaviness": 9,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "巫毒之刃",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fdagger.png?alt=media",
+    "defense": 7,
+    "attack": 15,
+    "level": 2,
+    "category": "Melee",
+    "heaviness": 10,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "石中劍",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fexcalibur.png?alt=media",
+    "defense": 20,
+    "attack": 20,
+    "level": 4,
+    "category": "Melee",
+    "heaviness": 17,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "颶風雙刀",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fknight.png?alt=media",
+    "defense": 13,
+    "attack": 22,
+    "level": 3,
+    "category": "Melee",
+    "heaviness": 16,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "生命法杖",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fmagic-wand%20(1).png?alt=media",
+    "defense": 18,
+    "attack": 15,
+    "level": 2,
+    "category": "Magic",
+    "heaviness": 7,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "賢者領域",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fmagic-wand.png?alt=media",
+    "defense": 20,
+    "attack": 13,
+    "level": 3,
+    "category": "Magic",
+    "heaviness": 8,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "騎士寬劍",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Frpg.png?alt=media",
+    "defense": 15,
+    "attack": 17,
+    "level": 3,
+    "category": "Melee",
+    "heaviness": 17,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "死神鐮刀",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fscythe.png?alt=media",
+    "defense": 17,
+    "attack": 17,
+    "level": 2,
+    "category": "Melee",
+    "heaviness": 13,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "破陣戰矛",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fspear%20(1).png?alt=media",
+    "defense": 18,
+    "attack": 18,
+    "level": 3,
+    "category": "Melee",
+    "heaviness": 13,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "鋼鐵長槍",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fspear%20(2).png?alt=media",
+    "defense": 15,
+    "attack": 15,
+    "level": 2,
+    "category": "Melee",
+    "heaviness": 14,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "龍骨劍",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fspear%20(3).png?alt=media",
+    "defense": 15,
+    "attack": 17,
+    "level": 3,
+    "category": "Melee",
+    "heaviness": 12,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "寒心法杖",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fspear.png?alt=media",
+    "defense": 15,
+    "attack": 17,
+    "level": 4,
+    "category": "Magic",
+    "heaviness": 8,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "混沌法杖",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fstaff.png?alt=media",
+    "defense": 16,
+    "attack": 20,
+    "level": 4,
+    "category": "Magic",
+    "heaviness": 9,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "短劍",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fsword%20(2).png?alt=media",
+    "defense": 13,
+    "attack": 13,
+    "level": 1,
+    "category": "Melee",
+    "heaviness": 10,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "拘魂刀",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fsword%20(3).png?alt=media",
+    "defense": 17,
+    "attack": 17,
+    "level": 3,
+    "category": "Melee",
+    "heaviness": 16,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "短劍",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fsword%20(4).png?alt=media",
+    "defense": 15,
+    "attack": 15,
+    "level": 2,
+    "category": "Melee",
+    "heaviness": 10,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "王者之劍",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fweapon%20(2).png?alt=media",
+    "defense": 25,
+    "attack": 30,
+    "level": 5,
+    "category": "Melee",
+    "heaviness": 15,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "野人戰斧",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fweapon.png?alt=media",
+    "defense": 18,
+    "attack": 16,
+    "level": 2,
+    "category": "Melee",
+    "heaviness": 15,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "御魔斬",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fkatana.png?alt=media",
+    "defense": 15,
+    "attack": 23,
+    "level": 4,
+    "category": "Melee",
+    "heaviness": 14,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "撒旦之鋒",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fsword%20(4).png?alt=media",
+    "defense": 15,
+    "attack": 18,
+    "level": 3,
+    "category": "Melee",
+    "heaviness": 13,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  },
+  {
+    "name": "風息長弓",
+    "image": "https://firebasestorage.googleapis.com/v0/b/dotnet6-vite-mmorpg.appspot.com/o/images%2Fweapons%2Fweapon%20(1).png?alt=media",
+    "defense": 7,
+    "attack": 12,
+    "level": 1,
+    "category": "Ranged",
+    "heaviness": 6,
+    "description": "There live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in bookmarksgrove there live the blind texts far from the countries."
+  }
+]
