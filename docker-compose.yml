@@ -1,9 +1,18 @@
-version: '3.4'
+version: '3.6'
 
 services:
+  postgres:
+    image: postgres:12
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgrespassword
   client:
     image: client
-    restart: always
+    restart: unless-stopped
+    depends_on:
+      - "server"
     build:
       context: client
       dockerfile: ./Dockerfile
@@ -13,13 +22,18 @@ services:
       - 3030:8080
   server:
     image: server
-    restart: always
+    restart: unless-stopped
+    depends_on:
+      - "postgres"
     build:
       context: server
       dockerfile: ./Dockerfile
     environment:
-      DB_URL: jdbc:postgresql://db:5432/postgres
+      DB_URL: jdbc:postgresql://postgres:5432/postgres
       DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_PASSWORD: postgrespassword
     ports:
       - 5050:8080
+
+volumes:
+  db_data:

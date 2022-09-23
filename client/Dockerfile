@@ -1,16 +1,17 @@
 FROM node:16-alpine AS deps
-RUN apk add --no-cache libc6-compat && \
-    npm i -g pnpm
+RUN apk add --no-cache libc6-compat
+
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install
+
+RUN yarn global add pnpm && \
+    pnpm install
 
 FROM node:16-alpine AS builder
+
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-
-ENV NODE_ENV production
 
 RUN yarn build
 

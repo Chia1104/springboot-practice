@@ -5,10 +5,7 @@ export const userReducer = {
     state.user = {
       loading: "idle",
       error: null,
-      data: {
-        message: "",
-        data: null,
-      },
+      data: null,
     };
   },
 };
