@@ -4,18 +4,12 @@ export interface IArmorState {
   allArmors: {
     loading: "idle" | "pending" | "succeeded" | "failed";
     error: any;
-    data: {
-      message: string;
-      data?: Armor[] | null;
-    };
+    data: Armor[] | null;
   };
   armor: {
     loading: "idle" | "pending" | "succeeded" | "failed";
     error: any;
-    data: {
-      message: string;
-      data?: Armor | null;
-    };
+    data: Armor | null;
   };
 }
 
@@ -23,15 +17,11 @@ export const armorInitState: IArmorState = {
   allArmors: {
     loading: "idle",
     error: null,
-    data: {
-      message: "",
-    },
+    data: null,
   },
   armor: {
     loading: "idle",
     error: null,
-    data: {
-      message: "",
-    },
+    data: null,
   },
 };

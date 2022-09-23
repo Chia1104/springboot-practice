@@ -84,8 +84,7 @@ const UserDetail: FC<Props> = (props) => {
             <Armor armor={user.armor} />
           </div>
         ) : (
-          // @ts-ignore
-          userData.userId === userId && (
+          userData?.user.id === userId && (
             <div className="flex flex-col w-[200px] mx-auto p-5 h-full">
               <h2 className="c-subtitle m-2 c-text-bg-primary-half self-center">
                 Armor

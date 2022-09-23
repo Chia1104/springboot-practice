@@ -4,18 +4,12 @@ export interface IUserState {
   allUsers: {
     loading: "idle" | "pending" | "succeeded" | "failed";
     error: any;
-    data: {
-      message: string;
-      data?: User[] | null;
-    };
+    data?: User[] | null;
   };
   user: {
     loading: "idle" | "pending" | "succeeded" | "failed";
     error: any;
-    data: {
-      message: string;
-      data?: User | null;
-    };
+    data?: User | null;
   };
   updateLoading: "idle" | "pending" | "succeeded" | "failed";
 }
@@ -24,16 +18,12 @@ export const userInitState: IUserState = {
   allUsers: {
     loading: "idle",
     error: null,
-    data: {
-      message: "",
-    },
+    data: null,
   },
   user: {
     loading: "idle",
     error: null,
-    data: {
-      message: "",
-    },
+    data: null,
   },
   updateLoading: "idle",
 };

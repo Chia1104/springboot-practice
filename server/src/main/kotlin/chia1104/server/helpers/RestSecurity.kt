@@ -53,6 +53,7 @@ open class RestSecurity {
                     .authenticationEntryPoint(BearerTokenAuthenticationEntryPoint())
                     .accessDeniedHandler(BearerTokenAccessDeniedHandler())
             }
+            .cors(Customizer.withDefaults())
         return http.build()
     }
 

@@ -4,9 +4,9 @@ import type { UUID } from "@chia/shared/types";
 
 export const getAllHeadgearAsync = createAsyncThunk(
   "headgear/getAllHeadgear",
-  async (_, { rejectWithValue }) => {
+  async (token: string, { rejectWithValue }) => {
     try {
-      const response = await getAllHeadgear();
+      const response = await getAllHeadgear(token);
       if (response.status !== 200)
         return rejectWithValue(response.data.message);
       return response;
@@ -18,9 +18,9 @@ export const getAllHeadgearAsync = createAsyncThunk(
 
 export const getHeadgearAsync = createAsyncThunk(
   "headgear/getHeadgear",
-  async (id: UUID, { rejectWithValue }) => {
+  async ({ token, id }: { token: string; id: UUID }, { rejectWithValue }) => {
     try {
-      const response = await getHeadgear(id);
+      const response = await getHeadgear(token, id);
       if (response.status !== 200)
         return rejectWithValue(response.data.message);
       return response;

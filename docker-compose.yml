@@ -15,7 +15,7 @@ services:
     image: server
     restart: always
     build:
-      context: pserver
+      context: server
       dockerfile: ./Dockerfile
     environment:
       DB_URL: jdbc:postgresql://db:5432/postgres

@@ -9,17 +9,20 @@ import {
   selectActionSheet,
   activeEditWeaponModal,
 } from "@chia/store/modules/ActionSheet";
-
 import { Loading } from "@geist-ui/core";
+import { useReadLocalStorage } from "usehooks-ts";
+import { LocalUser } from "@chia/shared/types";
 
 const EditWeaponModal: FC = () => {
   const dispatch = useAppDispatch();
   const weapons = useAppSelector(selectAllWeapons);
   const actionSheet = useAppSelector(selectActionSheet);
+  const userData = useReadLocalStorage<LocalUser>("userData");
 
   useEffect(() => {
-    if (!weapons.data.data && actionSheet.editWeaponModal.isOpen)
-      dispatch(getAllWeaponsAsync());
+    if (!weapons.data && actionSheet.editWeaponModal.isOpen)
+      // @ts-ignore
+      dispatch(getAllWeaponsAsync(userData.token));
   }, [actionSheet.editWeaponModal.isOpen]);
 
   return (
@@ -30,7 +33,7 @@ const EditWeaponModal: FC = () => {
       {weapons.loading === "pending" && <Loading>Loading</Loading>}
       {weapons.loading === "succeeded" && (
         // @ts-ignore
-        <EditWeaponList weapons={weapons.data.data} />
+        <EditWeaponList weapons={weapons.data} />
       )}
     </EditItemModal>
   );

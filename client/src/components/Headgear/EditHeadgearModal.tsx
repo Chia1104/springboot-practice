@@ -10,15 +10,19 @@ import {
   activeEditHeadgearModal,
 } from "@chia/store/modules/ActionSheet";
 import { Loading } from "@geist-ui/core";
+import { useReadLocalStorage } from "usehooks-ts";
+import { LocalUser } from "@chia/shared/types";
 
 const EditHeadgearrModal: FC = () => {
   const dispatch = useAppDispatch();
   const headgears = useAppSelector(selectAllHeadgear);
   const actionSheet = useAppSelector(selectActionSheet);
+  const userData = useReadLocalStorage<LocalUser>("userData");
 
   useEffect(() => {
-    if (!headgears.data.data && actionSheet.editHeadgearModal.isOpen)
-      dispatch(getAllHeadgearAsync());
+    if (!headgears.data && actionSheet.editHeadgearModal.isOpen)
+      // @ts-ignore
+      dispatch(getAllHeadgearAsync(userData.token));
   }, [actionSheet.editHeadgearModal.isOpen]);
 
   return (
@@ -29,7 +33,7 @@ const EditHeadgearrModal: FC = () => {
       {headgears.loading === "pending" && <Loading>Loading</Loading>}
       {headgears.loading === "succeeded" && (
         // @ts-ignore
-        <EditHeadgearList headgears={headgears.data.data} />
+        <EditHeadgearList headgears={headgears.data} />
       )}
     </EditItemModal>
   );

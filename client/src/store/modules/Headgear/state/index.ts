@@ -4,18 +4,12 @@ export interface IHeadgearState {
   allHeadgear: {
     loading: "idle" | "pending" | "succeeded" | "failed";
     error: any;
-    data: {
-      message: string;
-      data?: Headgear[] | null;
-    };
+    data: Headgear[] | null;
   };
   headgear: {
     loading: "idle" | "pending" | "succeeded" | "failed";
     error: any;
-    data: {
-      message: string;
-      data?: Headgear | null;
-    };
+    data: Headgear | null;
   };
 }
 
@@ -23,15 +17,11 @@ export const headgearInitState: IHeadgearState = {
   allHeadgear: {
     loading: "idle",
     error: null,
-    data: {
-      message: "",
-    },
+    data: null,
   },
   headgear: {
     loading: "idle",
     error: null,
-    data: {
-      message: "",
-    },
+    data: null,
   },
 };

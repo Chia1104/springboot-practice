@@ -42,8 +42,7 @@ const EditShieldList: FC<Props> = (props) => {
               onClick={() => {
                 dispatch(
                   postUserShieldAsync({
-                    // @ts-ignore
-                    token: userData.accessToken,
+                    token: userData?.token || "",
                     shieldId: shield.id,
                   })
                 );

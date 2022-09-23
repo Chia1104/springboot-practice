@@ -10,15 +10,19 @@ import {
   activeEditArmorModal,
 } from "@chia/store/modules/ActionSheet";
 import { Loading } from "@geist-ui/core";
+import { useReadLocalStorage } from "usehooks-ts";
+import { LocalUser } from "@chia/shared/types";
 
 const EditArmorModal: FC = () => {
   const dispatch = useAppDispatch();
   const armors = useAppSelector(selectAllArmors);
   const actionSheet = useAppSelector(selectActionSheet);
+  const userData = useReadLocalStorage<LocalUser>("userData");
 
   useEffect(() => {
-    if (!armors.data.data && actionSheet.editArmorModal.isOpen)
-      dispatch(getAllArmorsAsync());
+    if (!armors.data && actionSheet.editArmorModal.isOpen)
+      // @ts-ignore
+      dispatch(getAllArmorsAsync(userData.token));
   }, [actionSheet.editArmorModal.isOpen]);
 
   return (
@@ -29,7 +33,7 @@ const EditArmorModal: FC = () => {
       {armors.loading === "pending" && <Loading>Loading</Loading>}
       {armors.loading === "succeeded" && (
         // @ts-ignore
-        <EditArmorList armors={armors.data.data} />
+        <EditArmorList armors={armors.data} />
       )}
     </EditItemModal>
   );

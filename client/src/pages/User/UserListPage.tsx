@@ -10,10 +10,12 @@ import type { LocalUser } from "@chia/shared/types";
 const UserListPage: FC = () => {
   const dispatch = useAppDispatch();
   const users = useAppSelector(selectAllUsers);
+  console.log(users.data);
   const userData = useReadLocalStorage<LocalUser>("userData");
   useEffect(() => {
-    if (!users.data.data) dispatch(getAllUsersAsync(userData?.token || ""));
+    if (!users.data) dispatch(getAllUsersAsync(userData?.token || ""));
   }, []);
+
   return (
     <div className="c-main c-container">
       <h1 className="my-20">
@@ -22,7 +24,7 @@ const UserListPage: FC = () => {
       {users.loading === "pending" && <UserListLoader />}
       {users.loading === "succeeded" && (
         // @ts-ignore
-        <UserList users={users.data.data} />
+        <UserList users={users.data} />
       )}
     </div>
   );

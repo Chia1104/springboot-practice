@@ -9,17 +9,20 @@ import {
   selectActionSheet,
   activeEditShieldModal,
 } from "@chia/store/modules/ActionSheet";
-
 import { Loading } from "@geist-ui/core";
+import { useReadLocalStorage } from "usehooks-ts";
+import { LocalUser } from "@chia/shared/types";
 
 const EditShieldModal: FC = () => {
   const dispatch = useAppDispatch();
   const shields = useAppSelector(selectAllShields);
   const actionSheet = useAppSelector(selectActionSheet);
+  const userData = useReadLocalStorage<LocalUser>("userData");
 
   useEffect(() => {
-    if (!shields.data.data && actionSheet.editShieldModal.isOpen)
-      dispatch(getAllShieldsAsync());
+    if (!shields.data && actionSheet.editShieldModal.isOpen)
+      // @ts-ignore
+      dispatch(getAllShieldsAsync(userData.token));
   }, [actionSheet.editShieldModal.isOpen]);
 
   return (
@@ -30,7 +33,7 @@ const EditShieldModal: FC = () => {
       {shields.loading === "pending" && <Loading>Loading</Loading>}
       {shields.loading === "succeeded" && (
         // @ts-ignore
-        <EditShieldList shields={shields.data.data} />
+        <EditShieldList shields={shields.data} />
       )}
     </EditItemModal>
   );

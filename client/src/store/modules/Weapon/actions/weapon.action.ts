@@ -4,9 +4,9 @@ import type { UUID } from "@chia/shared/types";
 
 export const getAllWeaponsAsync = createAsyncThunk(
   "weapon/getAllWeapons",
-  async (_, { rejectWithValue }) => {
+  async (token: string, { rejectWithValue }) => {
     try {
-      const response = await getAllWeapons();
+      const response = await getAllWeapons(token);
       if (response.status !== 200)
         return rejectWithValue(response.data.message);
       return response;
@@ -18,9 +18,9 @@ export const getAllWeaponsAsync = createAsyncThunk(
 
 export const getWeaponAsync = createAsyncThunk(
   "weapon/getWeapon",
-  async (id: UUID, { rejectWithValue }) => {
+  async ({ token, id }: { token: string; id: UUID }, { rejectWithValue }) => {
     try {
-      const response = await getWeapon(id);
+      const response = await getWeapon(token, id);
       if (response.status !== 200)
         return rejectWithValue(response.data.message);
       return response;

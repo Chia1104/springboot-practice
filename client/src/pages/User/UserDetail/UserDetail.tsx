@@ -42,7 +42,7 @@ const UserDetailPage: FC = () => {
       </div>
       {user.loading === "succeeded" && (
         // @ts-ignore
-        <UserDetail user={user.data.data}>
+        <UserDetail user={user.data}>
           {updateLoading === "pending" && <Spinner />}
         </UserDetail>
       )}
