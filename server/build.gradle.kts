@@ -58,8 +58,8 @@ tasks.withType<Test> {
 
 docker {
 	springBootApplication {
-		baseImage.set("openjdk:8-alpine")
-		ports.set(listOf(9090, 8080))
+		baseImage.set("openjdk:11-alpine")
+		ports.set(listOf(5050, 8080))
 		images.set(setOf("awesome-spring-boot:1.115", "awesome-spring-boot:latest"))
 		jvmArgs.set(listOf("-Dspring.profiles.active=production", "-Xmx2048m"))
 	}

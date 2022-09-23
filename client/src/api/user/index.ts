@@ -51,16 +51,13 @@ export const postUserArmor = async (
   data: any;
   status: number;
 }> => {
-  const res = await fetch(
-    `${getBaseUrl()}/api/user/update-armor?armorId=${armorId}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const res = await fetch(`${getBaseUrl()}/api/user/armor?armorId=${armorId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
   const data: any = await res.json();
 
   return {
@@ -75,7 +72,7 @@ export const deleteUserArmor = async (
   data: any;
   status: number;
 }> => {
-  const res = await fetch(`${getBaseUrl()}/api/user/remove-armor`, {
+  const res = await fetch(`${getBaseUrl()}/api/user/armor`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -98,7 +95,7 @@ export const postUserHeadgear = async (
   status: number;
 }> => {
   const res = await fetch(
-    `${getBaseUrl()}/api/user/update-headgear?headgearId=${headgearId}`,
+    `${getBaseUrl()}/api/user/headgear?headgearId=${headgearId}`,
     {
       method: "PUT",
       headers: {
@@ -121,7 +118,7 @@ export const deleteUserHeadgear = async (
   data: any;
   status: number;
 }> => {
-  const res = await fetch(`${getBaseUrl()}/api/user/remove-headgear`, {
+  const res = await fetch(`${getBaseUrl()}/api/user/headgear`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -144,7 +141,7 @@ export const postUserWeapon = async (
   status: number;
 }> => {
   const res = await fetch(
-    `${getBaseUrl()}/api/user/update-weapon?weaponId=${weaponId}`,
+    `${getBaseUrl()}/api/user/weapon?weaponId=${weaponId}`,
     {
       method: "PUT",
       headers: {
@@ -167,7 +164,7 @@ export const deleteUserWeapon = async (
   data: any;
   status: number;
 }> => {
-  const res = await fetch(`${getBaseUrl()}/api/user/remove-weapon`, {
+  const res = await fetch(`${getBaseUrl()}/api/user/weapon`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -190,7 +187,7 @@ export const postUserShield = async (
   status: number;
 }> => {
   const res = await fetch(
-    `${getBaseUrl()}/api/user/update-shield?shieldId=${shieldId}`,
+    `${getBaseUrl()}/api/user/shield?shieldId=${shieldId}`,
     {
       method: "PUT",
       headers: {
@@ -213,7 +210,7 @@ export const deleteUserShield = async (
   data: any;
   status: number;
 }> => {
-  const res = await fetch(`${getBaseUrl()}/api/user/remove-shield`, {
+  const res = await fetch(`${getBaseUrl()}/api/user/shield`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

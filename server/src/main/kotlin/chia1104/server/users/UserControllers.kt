@@ -29,7 +29,7 @@ class UserControllers(private val service: UserServices) {
         }
     }
 
-    @PutMapping("/update-armor")
+    @PutMapping("/armor")
     fun updateArmor(
         @Valid
         @RequestParam
@@ -45,7 +45,7 @@ class UserControllers(private val service: UserServices) {
         }
     }
 
-    @DeleteMapping("/remove-armor")
+    @DeleteMapping("/armor")
     fun deleteArmor(
         @RequestHeader("Authorization")
         token: String
@@ -58,7 +58,7 @@ class UserControllers(private val service: UserServices) {
         }
     }
 
-    @PutMapping("/update-weapon")
+    @PutMapping("/weapon")
     fun updateWeapon(
         @Valid
         @RequestParam
@@ -74,7 +74,7 @@ class UserControllers(private val service: UserServices) {
         }
     }
 
-    @DeleteMapping("/remove-weapon")
+    @DeleteMapping("/weapon")
     fun deleteWeapon(
         @RequestHeader("Authorization")
         token: String
@@ -87,7 +87,7 @@ class UserControllers(private val service: UserServices) {
         }
     }
 
-    @PutMapping("/update-headgear")
+    @PutMapping("/headgear")
     fun updateHeadgear(
         @Valid
         @RequestParam
@@ -103,7 +103,7 @@ class UserControllers(private val service: UserServices) {
         }
     }
 
-    @DeleteMapping("/remove-headgear")
+    @DeleteMapping("/headgear")
     fun deleteHeadgear(
         @RequestHeader("Authorization")
         token: String
@@ -116,7 +116,7 @@ class UserControllers(private val service: UserServices) {
         }
     }
 
-    @PutMapping("/update-shield")
+    @PutMapping("/shield")
     fun updateShield(
         @Valid
         @RequestParam
@@ -132,7 +132,7 @@ class UserControllers(private val service: UserServices) {
         }
     }
 
-    @DeleteMapping("/remove-shield")
+    @DeleteMapping("/shield")
     fun deleteShield(
         @RequestHeader("Authorization")
         token: String
