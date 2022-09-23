@@ -13,27 +13,13 @@ class HeadgearServices (private val repository: HeadgearRepositories) {
     fun getHeadgearById(id: UUID): Optional<Headgear> = repository.findById(id)
 
     fun createHeadgear(newHeadgear: NewHeadgear): Headgear {
-        val headgear = Headgear(
-            name = newHeadgear.name,
-            description = newHeadgear.description,
-            image = newHeadgear.image,
-            defense = newHeadgear.defense,
-            level = newHeadgear.level,
-            heaviness = newHeadgear.heaviness,
-        )
+        val headgear = Headgear.create(newHeadgear)
         return repository.save(headgear)
     }
 
     fun addMultipleHeadgears(newHeadgears: List<NewHeadgear>): List<Headgear> {
         val headgears = newHeadgears.map {
-            Headgear(
-                name = it.name,
-                description = it.description,
-                image = it.image,
-                defense = it.defense,
-                level = it.level,
-                heaviness = it.heaviness,
-            )
+            Headgear.create(it)
         }
         return repository.saveAll(headgears)
     }

@@ -35,4 +35,25 @@ class UserShield (
 
     @Column(nullable = false)
     var heaviness: Int,
-)
+) {
+    companion object {
+        fun create(
+            name: String,
+            description: String,
+            image: String,
+            defense: Int,
+            attack: Int,
+            level: Int,
+            heaviness: Int
+        ) =
+            UserShield(
+                name = name,
+                description = description,
+                image = image,
+                defense = defense,
+                attack = attack,
+                level = level,
+                heaviness = heaviness
+            )
+    }
+}

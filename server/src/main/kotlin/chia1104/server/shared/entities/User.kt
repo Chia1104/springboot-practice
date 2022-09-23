@@ -47,4 +47,10 @@ class User (
 
     @Column(nullable = false)
     var created_at: LocalDateTime = LocalDateTime.now()
+
+    companion object {
+        fun create(name: String, email: String, password: String, role: Role): User {
+            return User(name, email, password, role)
+        }
+    }
 }

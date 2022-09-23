@@ -33,4 +33,23 @@ class UserArmor (
 
     @Column(nullable = false)
     var heaviness: Int,
-)
+) {
+    companion object {
+        fun create(
+            name: String,
+            description: String,
+            image: String,
+            defense: Int,
+            level: Int,
+            heaviness: Int
+        ): UserArmor =
+            UserArmor(
+                name = name,
+                description = description,
+                image = image,
+                defense = defense,
+                level = level,
+                heaviness = heaviness
+            )
+    }
+}

@@ -51,12 +51,7 @@ class UserServices(
             throw IllegalArgumentException("Email already exists")
         }
         val hashed = hashUtils.hashPassword(user.password)
-        return repository.save(User(
-            name = user.name,
-            email = user.email,
-            password = hashed,
-            role = user.role
-        ))
+        return repository.save(User.create(user.name, user.email, hashed, user.role))
     }
 
     fun login(user: LoginDto): User {
@@ -78,13 +73,13 @@ class UserServices(
     fun updateUserArmor(token: String, armorId: UUID): User {
         val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
         val armor = armorRepository.findById(armorId).orElseThrow { IllegalArgumentException("Armor not found") }
-        val updateArmor = userArmorRepository.save(UserArmor(
-            name = armor.name,
-            description = armor.description,
-            image = armor.image,
-            defense = armor.defense,
-            level = armor.level,
-            heaviness = armor.heaviness,
+        val updateArmor = userArmorRepository.save(UserArmor.create(
+            armor.name,
+            armor.description,
+            armor.image,
+            armor.defense,
+            armor.level,
+            armor.heaviness,
         ))
         user.armor = updateArmor
         return repository.save(user)
@@ -99,13 +94,13 @@ class UserServices(
     fun updateUserHeadgear(token: String, headgearId: UUID): User {
         val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
         val headgear = headgearRepository.findById(headgearId).orElseThrow { IllegalArgumentException("Headgear not found") }
-        val updateHeadgear = userHeadgearRepository.save(UserHeadgear(
-            name = headgear.name,
-            description = headgear.description,
-            image = headgear.image,
-            defense = headgear.defense,
-            level = headgear.level,
-            heaviness = headgear.heaviness,
+        val updateHeadgear = userHeadgearRepository.save(UserHeadgear.create(
+            headgear.name,
+            headgear.description,
+            headgear.image,
+            headgear.defense,
+            headgear.level,
+            headgear.heaviness,
         ))
         user.headgear = updateHeadgear
         return repository.save(user)
@@ -120,15 +115,15 @@ class UserServices(
     fun updateUserWeapon(token: String, weaponId: UUID): User {
         val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
         val weapon = weaponRepository.findById(weaponId).orElseThrow { IllegalArgumentException("Weapon not found") }
-        val updateWeapon = userWeaponRepository.save(UserWeapon(
-            name = weapon.name,
-            description = weapon.description,
-            image = weapon.image,
-            defense = weapon.defense,
-            attack = weapon.attack,
-            level = weapon.level,
-            heaviness = weapon.heaviness,
-            category = weapon.category,
+        val updateWeapon = userWeaponRepository.save(UserWeapon.create(
+            weapon.name,
+            weapon.description,
+            weapon.image,
+            weapon.defense,
+            weapon.attack,
+            weapon.level,
+            weapon.category,
+            weapon.heaviness,
         ))
         user.weapon = updateWeapon
         return repository.save(user)
@@ -143,14 +138,14 @@ class UserServices(
     fun updateUserShield(token: String, shieldId: UUID): User {
         val user = repository.findByEmail(this.jwtDecoder.decode(token).getClaimAsString("email")) ?: throw IllegalArgumentException("User not found")
         val shield = shieldRepository.findById(shieldId).orElseThrow { IllegalArgumentException("Shield not found") }
-        val updateShield = userShieldRepository.save(UserShield(
-            name = shield.name,
-            description = shield.description,
-            image = shield.image,
-            defense = shield.defense,
-            attack = shield.attack,
-            level = shield.level,
-            heaviness = shield.heaviness,
+        val updateShield = userShieldRepository.save(UserShield.create(
+            shield.name,
+            shield.description,
+            shield.image,
+            shield.defense,
+            shield.attack,
+            shield.level,
+            shield.heaviness,
         ))
         user.shield = updateShield
         return repository.save(user)

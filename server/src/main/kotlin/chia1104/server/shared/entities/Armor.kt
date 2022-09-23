@@ -1,6 +1,6 @@
 package chia1104.server.shared.entities
 
-import org.hibernate.Hibernate
+import chia1104.server.shared.dto.armor.NewArmor
 import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
@@ -30,4 +30,17 @@ class Armor (
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     val id: UUID? = null
+
+    companion object {
+        fun create(newArmor: NewArmor): Armor {
+            return Armor(
+                newArmor.name,
+                newArmor.description,
+                newArmor.image,
+                newArmor.defense,
+                newArmor.level,
+                newArmor.heaviness
+            )
+        }
+    }
 }

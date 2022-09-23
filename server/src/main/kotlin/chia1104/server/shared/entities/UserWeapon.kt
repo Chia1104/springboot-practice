@@ -40,4 +40,26 @@ class UserWeapon (
 
     @Column(nullable = false)
     var heaviness: Int,
-)
+) {
+    companion object {
+        fun create(
+            name: String,
+            description: String,
+            image: String,
+            defense: Int,
+            attack: Int,
+            level: Int,
+            category: WeaponCategory,
+            heaviness: Int,
+        ) = UserWeapon(
+            name = name,
+            description = description,
+            image = image,
+            defense = defense,
+            attack = attack,
+            level = level,
+            category = category,
+            heaviness = heaviness,
+        )
+    }
+}

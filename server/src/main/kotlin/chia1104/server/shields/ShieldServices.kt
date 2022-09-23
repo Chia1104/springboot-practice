@@ -13,29 +13,13 @@ class ShieldServices (private val repository: ShieldRepositories) {
     fun getShieldById(id: UUID): Optional<Shield> = repository.findById(id)
 
     fun createShield(newShield: NewShield): Shield {
-        val shield = Shield(
-            name = newShield.name,
-            description = newShield.description,
-            image = newShield.image,
-            defense = newShield.defense,
-            attack = newShield.attack,
-            level = newShield.level,
-            heaviness = newShield.heaviness,
-        )
+        val shield = Shield.create(newShield)
         return repository.save(shield)
     }
 
     fun addMultipleShields(newShields: List<NewShield>): List<Shield> {
         val shields = newShields.map {
-            Shield(
-                name = it.name,
-                description = it.description,
-                image = it.image,
-                defense = it.defense,
-                attack = it.attack,
-                level = it.level,
-                heaviness = it.heaviness,
-            )
+            Shield.create(it)
         }
         return repository.saveAll(shields)
     }

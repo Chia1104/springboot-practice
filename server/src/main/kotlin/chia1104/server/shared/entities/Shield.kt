@@ -3,6 +3,7 @@ package chia1104.server.shared.entities
 import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
+import chia1104.server.shared.dto.shield.NewShield
 
 @Entity
 @Table(name = "shields")
@@ -32,4 +33,16 @@ class Shield (
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     val id: UUID? = null
+
+    companion object {
+        fun create(dto: NewShield) = Shield(
+            name = dto.name,
+            description = dto.description,
+            image = dto.image,
+            defense = dto.defense,
+            attack = dto.attack,
+            level = dto.level,
+            heaviness = dto.heaviness
+        )
+    }
 }

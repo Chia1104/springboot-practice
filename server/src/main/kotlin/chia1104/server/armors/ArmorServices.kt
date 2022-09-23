@@ -11,26 +11,12 @@ class ArmorServices(private val repository: ArmorRepositories) {
     fun getAllArmors(): List<Armor> = repository.findAll();
     fun getArmorById(id: UUID): Optional<Armor> = repository.findById(id);
     fun createArmor(armor: NewArmor): Armor = repository.save(
-        Armor(
-            name = armor.name,
-            description = armor.description,
-            image = armor.image,
-            defense = armor.defense,
-            level = armor.level,
-            heaviness = armor.heaviness,
-        )
+        Armor.create(armor)
     );
 
     fun addMultipleArmors(armors: List<NewArmor>): List<Armor> = repository.saveAll(
         armors.map {
-            Armor(
-                name = it.name,
-                description = it.description,
-                image = it.image,
-                defense = it.defense,
-                level = it.level,
-                heaviness = it.heaviness,
-            )
+            Armor.create(it)
         }
     );
 }

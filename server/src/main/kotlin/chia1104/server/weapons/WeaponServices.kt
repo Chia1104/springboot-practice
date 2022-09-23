@@ -12,27 +12,9 @@ class WeaponServices(private val repository: WeaponRepositories) {
 
     fun getWeaponById(id: UUID): Optional<Weapon> = repository.findById(id)
 
-    fun createWeapon(newWeapon: NewWeapon): Weapon = repository.save(Weapon(
-        name = newWeapon.name,
-        description = newWeapon.description,
-        image = newWeapon.image,
-        defense = newWeapon.defense,
-        attack = newWeapon.attack,
-        level = newWeapon.level,
-        heaviness = newWeapon.heaviness,
-        category = newWeapon.category,
-    ))
+    fun createWeapon(newWeapon: NewWeapon): Weapon = repository.save(Weapon.create(newWeapon))
 
     fun addMultipleWeapons(newWeapons: List<NewWeapon>): List<Weapon> = repository.saveAll(newWeapons.map {
-        Weapon(
-            name = it.name,
-            description = it.description,
-            image = it.image,
-            defense = it.defense,
-            attack = it.attack,
-            level = it.level,
-            heaviness = it.heaviness,
-            category = it.category,
-        )
+        Weapon.create(it)
     })
 }
